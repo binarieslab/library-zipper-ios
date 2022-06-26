@@ -15,7 +15,10 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "BLZipper",
-            targets: ["BLZipper"]),
+            targets: [
+                "BLZipper"
+            ]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -29,6 +32,12 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "BLZipperTests",
-            dependencies: ["BLZipper"]),
+            dependencies: [
+                "BLZipper"
+            ],
+            resources: [
+                .copy("Resources/audiosample.mp3")
+            ]
+        ),
     ]
 )

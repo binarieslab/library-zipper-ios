@@ -15,7 +15,7 @@ public final class Gzipper {
         
         // Sometimes gzipped data is bigger then the original
         // ex. "test" string will be deflated in 6 bytes
-        let destinationBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: sourceBuffer.count * 10)
+        let destinationBuffer = UnsafeMutablePointer<UInt32>.allocate(capacity: sourceBuffer.count * 10)
         let compressedSize = compression_encode_buffer(
             destinationBuffer,
             sourceBuffer.count * 10,
@@ -71,7 +71,7 @@ public final class Gzipper {
         
         let deflatedData = data.subdata(in: 10 ..< data.count - 8)
         
-        let destinationBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: Int(originalSize))
+        let destinationBuffer = UnsafeMutablePointer<UInt32>.allocate(capacity: Int(originalSize))
         
         let inflatedSize: Int = deflatedData.withUnsafePointer { encodedSourceBuffer -> Int in
             compression_decode_buffer(
