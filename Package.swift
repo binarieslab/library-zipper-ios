@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "BLZipper",
     platforms: [
-        .macOS(.v10_12),
-        .iOS(.v10),
-        .tvOS(.v10),
-        .watchOS(.v3)
+        .macOS(.v10_15),
+        .iOS(.v13),
+        .tvOS(.v13),
+        .watchOS(.v6)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -29,7 +29,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "BLZipper",
-            dependencies: []),
+            dependencies: [
+            ]
+        ),
         .testTarget(
             name: "BLZipperTests",
             dependencies: [
