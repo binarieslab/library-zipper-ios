@@ -7,11 +7,11 @@
 
 import Foundation
 
-public class TestUtils: NSObject {
+class TestUtils: NSObject {
     
     static let bundle = Bundle.module
     
-    static public func contentsOfFile(name: String) -> Data {
+    static func contentsOfFile(name: String) -> Data {
         let pubPath  = bundle.path(forResource: name, ofType: nil)!
         return (try! Data(contentsOf: URL(fileURLWithPath: pubPath)))
     }
