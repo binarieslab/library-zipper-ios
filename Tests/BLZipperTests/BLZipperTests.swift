@@ -58,4 +58,8 @@ final class GzipperTests: XCTestCase {
         // Expected
         XCTAssertEqual(originalData, unzippedData)
     }
+    
+    func test() {
+        XCTAssertEqual(1, 2)
+    }
 }
